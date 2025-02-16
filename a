@@ -1,0 +1,10 @@
+local namecall
+namecall = hookmetamethod(game,"__namecall" , function(self , ...)
+       local arg = {...}
+       local mthd = getnamecallmethod()
+       if mthd == "SendMessage" and self.Name == "Actor" then
+          print(unpack(arg))
+          return namecall(self ,…)
+       end
+       return namecall(self , ...)
+end)
