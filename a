@@ -1,4 +1,4 @@
-local namecall
+local namecall = nil
 namecall = hookmetamethod(game,"__namecall" , function(self , ...)
        local arg = {...}
        local mthd = getnamecallmethod()
